@@ -1,18 +1,23 @@
 {
   "manifest_version": 2,
-  "name": "Borderify",
+  "name": "Whatsapp Groupchat Autoscroller",
   "version": "1.0",
 
-  "description": "Adds a red border to all webpages matching mozilla.org.",
+  "description": "Autoscrolling the gropuchat view when user got the new messages",
 
   "icons": {
     "48": "icons/border-48.png"
   },
 
+  "permissions": ["activeTab"],
+
+  "background": {
+    "scripts": ["background.js"]
+  },
   "content_scripts": [
     {
-      "matches": ["*://*.mozilla.org/*"],
-      "js": ["borderify.js"]
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": ["main.js"]
     }
   ],
   "browser_action": {
